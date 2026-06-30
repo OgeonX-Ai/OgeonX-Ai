@@ -1,0 +1,159 @@
+openapi: 3.1.0
+info:
+  title: LinkedIn Career Automation Action
+  version: 0.1.0
+  description: >
+    Minimal LinkedIn API schema for a Custom GPT / ChatGPT Action using LinkedIn OAuth.
+    Supports reading the authenticated member profile through OpenID Connect and creating
+    simple LinkedIn text or article shares when w_member_social is granted.
+servers:
+  - url: https://api.linkedin.com
+    description: LinkedIn API
+paths:
+  /v2/userinfo:
+    get:
+      operationId: getLinkedInUserInfo
+      summary: Get authenticated LinkedIn member profile
+      description: Returns the authenticated member profile using LinkedIn OpenID Connect.
+      security:
+        - linkedinOAuth: []
+      responses:
+        '200':
+          description: LinkedIn OpenID Connect user info response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sub:
+                    type: string
+                    description: LinkedIn subject/member identifier.
+                  name:
+                    type: string
+                  given_name:
+                    type: string
+                  family_name:
+                    type: string
+                  picture:
+                    type: string
+                  locale:
+                    type: string
+                  email:
+                    type: string
+                  email_verified:
+                    type: boolean
+  /v2/ugcPosts:
+    post:
+      operationId: createLinkedInShare
+      summary: Create a LinkedIn post/share
+      description: >
+        Creates a LinkedIn share on behalf of the authenticated member.
+        The caller must provide the author URN, for example urn:li:person:MEMBER_ID.
+        Requires the w_member_social scope.
+      security:
+        - linkedinOAuth: []
+      parameters:
+        - name: X-Restli-Protocol-Version
+          in: header
+          required: true
+          schema:
+            type: string
+            default: '2.0.0'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - author
+                - lifecycleState
+                - specificContent
+                - visibility
+              properties:
+                author:
+                  type: string
+                  description: LinkedIn member URN, for example urn:li:person:8675309.
+                lifecycleState:
+                  type: string
+                  enum:
+                    - PUBLISHED
+                  default: PUBLISHED
+                specificContent:
+                  type: object
+                  required:
+                    - com.linkedin.ugc.ShareContent
+                  properties:
+                    com.linkedin.ugc.ShareContent:
+                      type: object
+                      required:
+                        - shareCommentary
+                        - shareMediaCategory
+                      properties:
+                        shareCommentary:
+                          type: object
+                          required:
+                            - text
+                          properties:
+                            text:
+                              type: string
+                              maxLength: 3000
+                        shareMediaCategory:
+                          type: string
+                          enum:
+                            - NONE
+                            - ARTICLE
+                        media:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              status:
+                                type: string
+                                enum:
+                                  - READY
+                              originalUrl:
+                                type: string
+                              title:
+                                type: object
+                                properties:
+                                  text:
+                                    type: string
+                              description:
+                                type: object
+                                properties:
+                                  text:
+                                    type: string
+                visibility:
+                  type: object
+                  required:
+                    - com.linkedin.ugc.MemberNetworkVisibility
+                  properties:
+                    com.linkedin.ugc.MemberNetworkVisibility:
+                      type: string
+                      enum:
+                        - PUBLIC
+                        - CONNECTIONS
+                      default: PUBLIC
+      responses:
+        '201':
+          description: Share created. LinkedIn returns the post ID in the X-RestLi-Id response header.
+        '400':
+          description: Bad request.
+        '401':
+          description: Unauthorized or expired OAuth token.
+        '403':
+          description: Missing scope or product permission.
+components:
+  securitySchemes:
+    linkedinOAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.linkedin.com/oauth/v2/authorization
+          tokenUrl: https://www.linkedin.com/oauth/v2/accessToken
+          scopes:
+            openid: Authenticate the member using OpenID Connect.
+            profile: Retrieve lite profile information.
+            email: Retrieve email address when available.
+            w_member_social: Create LinkedIn posts on behalf of the authenticated member.
