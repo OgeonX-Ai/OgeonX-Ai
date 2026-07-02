@@ -1,32 +1,47 @@
-# Kim Harjamaki
+# Kim Harjamäki / OgeonX AI
 
-AI Engineer and Senior .NET Developer building autonomous AI systems at the
-intersection of .NET 10, TypeScript, and Python.
+AI-powered automation, MCP integrations, Azure architecture and DevOps platform engineering.
 
-## Coding-Autopilot-System
+<p align="left">
+  <a href="https://www.linkedin.com/in/kimharjamaki/">
+    <img src="https://img.shields.io/badge/LinkedIn-Kim%20Harjam%C3%A4ki-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile" />
+  </a>
+  <a href="https://github.com/OgeonX-Ai">
+    <img src="https://img.shields.io/badge/GitHub-OgeonX--Ai-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub organization" />
+  </a>
+  <a href="https://github.com/OgeonX-Ai/OgeonX-Ai/blob/main/privacy.html">
+    <img src="https://img.shields.io/badge/Privacy-Policy-0A7CFF?style=for-the-badge" alt="Privacy policy" />
+  </a>
+  <a href="https://github.com/OgeonX-Ai/OgeonX-Ai/blob/main/docs/linkedin-badge.md">
+    <img src="https://img.shields.io/badge/LinkedIn-Badge%20Kit-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn badge kit" />
+  </a>
+</p>
 
-An enterprise-grade AI automation platform demonstrating autonomous agent
-pipelines, prompt governance, and multi-agent coordination:
+## OgeonX AI focus
 
-| Project | Stack | Description |
-|---------|-------|-------------|
-| [gsd-orchestrator](https://github.com/Coding-Autopilot-System/gsd-orchestrator) | C# / .NET 10 | Autonomous GitHub agent — reads issues, creates branches, edits code, opens PRs |
-| [Promptimprover](https://github.com/Coding-Autopilot-System/Promptimprover) | TypeScript | MCP server middleware for prompt governance and compounding memory |
-| [autogen](https://github.com/Coding-Autopilot-System/autogen) | Python | Multi-agent orchestration runtime with Gemini/Claude provider fallback |
+- LinkedIn AI automation and company-page workflows
+- MCP server development for AI tools and agents
+- ChatGPT / Claude integrations
+- Azure cloud architecture and automation
+- DevOps, CI/CD and platform engineering
+- AI agent development and training
 
-[View the full org](https://github.com/Coding-Autopilot-System)
+## Community Autopilot
 
-## Technical Profile
+OgeonX AI Community Autopilot is a product direction for company-page content planning, approval, scheduled publishing and analytics. The goal is to connect authorized company-page workflows to AI assistants through secure OAuth and MCP-based tools.
+
+## Technical profile
 
 | Area | Technologies |
-|------|-------------|
-| Languages | C# / .NET 10, TypeScript, Python |
-| AI Providers | Anthropic Claude, Google Gemini |
-| Protocols | Model Context Protocol (MCP), JSON-RPC 2.0 |
-| Patterns | State machine, RAG, multi-agent coordination |
-| Cloud | Azure, GitHub Actions |
+|------|--------------|
+| Cloud | Azure, GitHub Actions, Azure DevOps |
+| Automation | PowerShell, Python, TypeScript, C# / .NET |
+| AI | MCP, RAG, agent orchestration, ChatGPT, Claude |
+| Security | OAuth, least privilege, structured auditability |
+| Delivery | Scrum, CI/CD, platform engineering |
 
 ## Contact
 
-LinkedIn: https://linkedin.com/in/kimharjamaki
+LinkedIn: https://www.linkedin.com/in/kimharjamaki/  
+GitHub: https://github.com/OgeonX-Ai  
 Email: ogeonx@gmail.com
