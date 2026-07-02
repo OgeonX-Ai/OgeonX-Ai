@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OgeonX AI Community Autopilot</title>
+  <meta name="description" content="OgeonX AI builds AI-powered company-page automation, MCP integrations, Azure architecture and DevOps platforms." />
+  <meta property="og:title" content="OgeonX AI Community Autopilot" />
+  <meta property="og:description" content="AI-powered company-page scheduling, approval workflows, analytics and MCP integrations." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06090f;
+      --panel: #0b1220;
+      --panel-2: #0f172a;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --blue: #0a7cff;
+      --line: rgba(10, 124, 255, 0.32);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(10, 124, 255, 0.22), transparent 28rem),
+        linear-gradient(135deg, #06090f 0%, #080d16 60%, #03050a 100%);
+      color: var(--text);
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+    .logo span { color: var(--blue); text-shadow: 0 0 20px rgba(10, 124, 255, 0.75); }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 650;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 42px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2.8rem, 8vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      margin: 0 0 22px;
+    }
+    .lead {
+      color: #cbd5e1;
+      font-size: 1.18rem;
+      max-width: 720px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(10, 124, 255, 0.12);
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .button.secondary { background: transparent; color: #cbd5e1; }
+    .panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(11, 18, 32, 0.84));
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 0 80px rgba(10, 124, 255, 0.12);
+    }
+    .panel h2 { margin-top: 0; letter-spacing: -0.04em; }
+    .badge-wrap {
+      display: grid;
+      place-items: center;
+      min-height: 320px;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: #020617;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 54px;
+    }
+    .card {
+      border: 1px solid rgba(10, 124, 255, 0.24);
+      border-radius: 22px;
+      padding: 22px;
+      background: rgba(15, 23, 42, 0.66);
+    }
+    .card strong { display: block; margin-bottom: 8px; }
+    .card p { color: var(--muted); margin: 0; line-height: 1.55; }
+    footer {
+      margin-top: 72px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(148, 163, 184, 0.16);
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+    }
+    footer a { color: #cbd5e1; text-decoration: none; }
+    @media (max-width: 860px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      header { align-items: flex-start; flex-direction: column; }
+      .nav a { margin-left: 0; margin-right: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">Ogeon<span>X</span> AI</div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="https://github.com/OgeonX-Ai">GitHub</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="docs/linkedin-badge.md">Badge kit</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">AI-powered company-page automation</div>
+        <h1>Community Autopilot</h1>
+        <p class="lead">
+          OgeonX AI builds secure AI automation for company-page content planning, approval queues,
+          scheduled publishing, analytics and MCP integrations.
+        </p>
+        <div class="actions">
+          <a class="button" href="https://www.linkedin.com/in/kimharjamaki/">Connect on LinkedIn</a>
+          <a class="button secondary" href="https://github.com/OgeonX-Ai">View GitHub</a>
+        </div>
+      </div>
+      <aside class="panel" aria-label="LinkedIn profile badge">
+        <h2>Builder profile</h2>
+        <div class="badge-wrap">
+          <div class="badge-base LI-profile-badge"
+               data-locale="en_US"
+               data-size="medium"
+               data-theme="dark"
+               data-type="VERTICAL"
+               data-vanity="kimharjamaki"
+               data-version="v1">
+            <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/kimharjamaki/">Kim H.</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid" aria-label="Services">
+      <div class="card"><strong>LinkedIn AI automation</strong><p>Draft, approve, schedule and measure company-page content.</p></div>
+      <div class="card"><strong>MCP server development</strong><p>Connect AI assistants to business tools with controlled permissions.</p></div>
+      <div class="card"><strong>Azure and DevOps</strong><p>Secure cloud architecture, CI/CD, automation and platform delivery.</p></div>
+    </section>
+
+    <footer>
+      <span>© 2026 OgeonX AI · Helsinki · Remote or onsite</span>
+      <span><a href="mailto:ogeonx@gmail.com">ogeonx@gmail.com</a></span>
+    </footer>
+  </main>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>
